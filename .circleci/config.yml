@@ -20,7 +20,15 @@ jobs:
        - run:
            name: "Say world"
            command: echo World!
-
+  print-my-name:
+    docker:
+      - image: cimg/base:2020.01
+    steps:
+      - checkout
+      - run:
+          name: "echo an env var that is part of the project"
+          command: |
+            echo $MY_ENV_VAR
 workflows:
   say-hello-workflow:
     jobs:
