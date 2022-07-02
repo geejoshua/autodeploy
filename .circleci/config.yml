@@ -28,7 +28,7 @@ jobs:
       - run:
           name: "echo an env var that is part of the project"
           command: |
-            echo $MY_ENV_VAR
+            echo $CIRCLE_PROJECT_USERNAME
 workflows:
   say-hello-workflow:
     jobs:
